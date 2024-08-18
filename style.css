@@ -503,17 +503,35 @@ section {
     stroke: var(--Color, #FFF);
 }
 
-.works_title{
-    margin-top: 4vh;
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 8px;
-    align-self: stretch;
+@media (min-width:720px){
+    .works_title{
+        margin-top: 4vh;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
 }
+
+@media (max-width:720px){
+    .works_title{
+        margin-top: 22vh;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
+}
+
+
 
 .works_title h1{
     width: 100%;
