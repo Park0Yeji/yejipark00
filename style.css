@@ -465,6 +465,15 @@ section {
     line-height: normal;
 }
 
+.list li a{
+    color: var(--Color, #FFF);
+    font-family: "IBM Plex Sans";
+    font-size: small;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 .worksHL{
     color: var(--Color, #FFF);
     font-family: "IBM Plex Sans";
@@ -551,6 +560,15 @@ section {
     font-style: normal;
     font-weight: 700;
     line-height: 120%; /* 24px */
+}
+
+.works_title h3{
+    color: var(--Color, #FFF);
+    font-family: "IBM Plex Sans";
+    font-size: small;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 section a{
