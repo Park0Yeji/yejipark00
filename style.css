@@ -306,7 +306,7 @@ nav ul li a:hover{
             position:absolute;
             top: 0;
             right: 0;
-            height: 26vh;
+            height: 30vh;
             width: 100vw;
             flex-shrink: 0;
             align-self: stretch;
