@@ -269,6 +269,18 @@ nav ul li a:hover{
         background: linear-gradient(180deg, #090909 60%, rgba(0, 0, 0, 0.00) 100%);
         cursor:auto;
     }
+
+    .rect2{
+        z-index: 2;
+        position:absolute;
+        bottom: -1vh;
+        right: 0;
+        height: 11vh;
+        width: 100vw;
+        flex-shrink: 0;
+        align-self: stretch;
+        background: linear-gradient(0deg, #090909 80%, rgba(0, 0, 0, 0.00) 100%);
+    }
     
 }
 
@@ -294,7 +306,7 @@ nav ul li a:hover{
             position:absolute;
             top: 0;
             right: 0;
-            height: 36vh;
+            height: 26vh;
             width: 100vw;
             flex-shrink: 0;
             align-self: stretch;
@@ -305,17 +317,7 @@ nav ul li a:hover{
 }
 
 
-.rect2{
-    z-index: 2;
-    position:absolute;
-    bottom: -1vh;
-    right: 0;
-    height: 11vh;
-    width: 100vw;
-    flex-shrink: 0;
-    align-self: stretch;
-    background: linear-gradient(0deg, #090909 80%, rgba(0, 0, 0, 0.00) 100%);
-}
+
 
 /* main Contents */
 @media (min-width:720px){
