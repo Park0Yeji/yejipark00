@@ -14,7 +14,7 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     margin-left: 5%;
     margin-right: 5%;
-    background: black;
+    background: #090909;
     overflow: hidden;
 }
 
@@ -57,7 +57,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--Color, #fff);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: medium;
     font-style: normal;
@@ -138,7 +138,7 @@ nav ul li a:hover{
 }
 
 .box a{
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: smaller;
     font-style: normal;
@@ -170,14 +170,14 @@ nav ul li a:hover{
     align-items: center;
     flex-wrap: nowrap;
     border-radius: 99px;
-    border: 1px solid var(--Color, #FFF);
+    border: 1px solid var(--Color, #FFFFFE);
 }
 
 @media (min-width: 720px){
     .tags ul h1 {
         display: inline-block;
         flex-wrap: nowrap;
-        color: var(--Color, #FFF);
+        color: var(--Color, #FFFFFE);
         font-family: "IBM Plex Sans";
         font-size: small;
         font-style: italic;
@@ -190,7 +190,7 @@ nav ul li a:hover{
     .tags ul h1 {
         display: inline-block;
         flex-wrap: nowrap;
-        color: var(--Color, #FFF);
+        color: var(--Color, #FFFFFE);
         font-family: "IBM Plex Sans";
         font-size: x-small;
         font-style: italic;
@@ -210,7 +210,7 @@ nav ul li a:hover{
         width: 100vw;
         flex-shrink: 0;
         align-self: stretch;
-        background: linear-gradient(180deg, #000 60%, rgba(0, 0, 0, 0.00) 100%);
+        background: linear-gradient(180deg, #090909 60%, rgba(0, 0, 0, 0.00) 100%);
         cursor:auto;
     }
     
@@ -227,7 +227,7 @@ nav ul li a:hover{
             width: 100vw;
             flex-shrink: 0;
             align-self: stretch;
-            background: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0.00) 100%);
+            background: linear-gradient(180deg, #090909 80%, rgba(0, 0, 0, 0.00) 100%);
             cursor:auto;
         }
     }
@@ -242,7 +242,7 @@ nav ul li a:hover{
             width: 100vw;
             flex-shrink: 0;
             align-self: stretch;
-            background: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0.00) 100%);
+            background: linear-gradient(180deg, #090909 80%, rgba(0, 0, 0, 0.00) 100%);
             cursor:auto;
         }
     }
@@ -258,7 +258,7 @@ nav ul li a:hover{
     width: 100vw;
     flex-shrink: 0;
     align-self: stretch;
-    background: linear-gradient(0deg, #000 80%, rgba(0, 0, 0, 0.00) 100%);
+    background: linear-gradient(0deg, #090909 80%, rgba(0, 0, 0, 0.00) 100%);
 }
 
 /* main Contents */
@@ -271,7 +271,7 @@ nav ul li a:hover{
         z-index: 1;
         width: 52vw;
         height: 100vh;
-        padding: 13vh 0px 0px 0px;
+        padding: 10.5vh 0px 0px 0px;
         flex-direction: column;
         align-items: flex-start;
         gap: 20vh;
@@ -289,7 +289,7 @@ nav ul li a:hover{
         z-index: 1;
         width: 90vw;
         height: 100vh;
-        padding: 13vh 0px 0px 0px;
+        padding: 12vh 0px 0px 0px;
         flex-direction: column;
         align-items: flex-start;
         gap: 20vh;
@@ -314,7 +314,7 @@ nav ul li a:hover{
 .intro h1{
     align-self: stretch;
     margin-top: 24vh;
-    color: var(--Color, #fff);
+    color: var(--Color, #FFFFFE);
     width: 80%;
     font-family: "IBM Plex Sans";
     font-size: 100px;
@@ -346,7 +346,7 @@ section {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: 24px;
     font-style: normal;
@@ -371,12 +371,12 @@ section {
 .unit{
     width: 44vh;
     height: 44vh;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #000 90%), var(--background-image-url) no-repeat center center / cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #090909 90%), var(--background-image-url) no-repeat center center / cover;
     transition: 0.3s;
 }
 
 .unit:hover{
-    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 90%), var(--background-image-url) no-repeat center center / cover; */
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #090909 90%), var(--background-image-url) no-repeat center center / cover; */
     opacity: 0.7;
     cursor: pointer;
     
@@ -400,7 +400,7 @@ section {
 .unit li h1{
     width: 100%;
     align-self: stretch;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: smaller;
     font-style: italic;
@@ -411,7 +411,7 @@ section {
 .unit li h2{
     width: 100%;
     align-self: stretch;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: larger;
     font-style: normal;
@@ -429,7 +429,7 @@ section {
 
 .list_number{
     width: 4%;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: large;
     font-style: normal;
@@ -448,7 +448,7 @@ section {
 
 .list li h1{
     align-self: stretch;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: large;
     font-style: normal;
@@ -457,7 +457,7 @@ section {
 }
 
 .list li h2{
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: small;
     font-style: normal;
@@ -466,7 +466,7 @@ section {
 }
 
 .list li a{
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: small;
     font-style: normal;
@@ -475,7 +475,7 @@ section {
 }
 
 .worksHL{
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: small;
     font-style: normal;
@@ -485,7 +485,7 @@ section {
 }
 
 .kor{
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans KR";
     font-size: small;
     font-style: normal;
@@ -509,7 +509,7 @@ section {
     height: 0px;
     flex-shrink: 0;
     stroke-width: 2px;
-    stroke: var(--Color, #FFF);
+    stroke: var(--Color, #FFFFFE);
 }
 
 @media (min-width:720px){
@@ -544,7 +544,7 @@ section {
 
 .works_title h1{
     width: 100%;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: medium;
     font-style: italic;
@@ -554,7 +554,7 @@ section {
 
 .works_title h2{
     width:  100%;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: x-large;
     font-style: normal;
@@ -563,7 +563,7 @@ section {
 }
 
 .works_title h3{
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: small;
     font-style: normal;
@@ -608,7 +608,7 @@ section a:hover{
 
 p{
     align-self: stretch;
-    color: var(--Color, #FFF);
+    color: var(--Color, #FFFFFE);
     font-family: "IBM Plex Sans";
     font-size: medium;
     font-style: normal;
@@ -701,7 +701,7 @@ p{
     margin-top: 20px;
     padding: 10px 0;
     background: #333;
-    color: #fff;
+    color: #FFFFFE;
 } */
 
 
@@ -715,13 +715,13 @@ p{
 
 /* 스크롤바 트랙 (배경) */
 ::-webkit-scrollbar-track {
-    background: #000; /* 트랙 색상 */
+    background: #090909; /* 트랙 색상 */
     border-radius: 10px; /* 둥근 모서리 */
 }
 
 /* 스크롤바 슬라이더 (버튼) */
 ::-webkit-scrollbar-thumb {
-    background: #fff; /* 슬라이더 색상 */
+    background: #FFFFFE; /* 슬라이더 색상 */
     border-radius: 10px; /* 둥근 모서리 */
 }
 
@@ -761,4 +761,16 @@ p{
     transform: translate(-50%, -50%);
     opacity: 1;
     transition: opacity 0.5s, transform 0.5s;
+}
+
+main[data-page="works"] {
+    padding-top: 19.25%; /* 필요에 따라 여백 추가 */
+}
+
+main[data-page="publications"]{
+    padding-top: 19.25%;
+}
+
+main[data-page="awards"]{
+    padding-top: 19.25%;
 }

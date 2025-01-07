@@ -25,32 +25,12 @@
         </ul>
     </nav> -->
 
-    <div>
-        <div class="Profile">
-            <img src="image/profile.png" alt="yeji-profile" width="200" height="200">
-            <h1>Yeji Park</h1>
-            <div class="contact">
-                <div class="box">
-                    <img src="svg/mail.svg" alt="Icon">
-                    <a href="mailto:pyj201113@unist.ac.kr">pyj201113@unist.ac.kr</a>
-                </div>
-                <div class="box">
-                    <img src="svg/linkedin.svg" alt="Icon">
-                    <a href="https://www.linkedin.com/in/yeji00park">LinkedIn</a>
-                </div>
-                <div class="box">
-                    <img src="svg/cv.svg" alt="Icon">
-                    <a href="https://docs.google.com/document/d/1l8ACnqmVeRhkKDL8u9deGYdHPwSbz_Ah/edit?usp=sharing&ouid=111472790219546371691&rtpof=true&sd=true">CV</a>
-                </div>
-            </div>
-            <div class = "tags">
-                <ul><h1>#Human_Computer_Interaction</h1></ul>
-                <ul><h1>#Virtual_Reality</h1></ul>
-                <ul><h1>#Gaze_Interaction</h1></ul>
-                <ul><h1>#Interactions_for_HMDs</h1></ul>
-            </div>
-        </div>
-    </div>
+    <div id="profile-container"></div>
+    <script src="profile.js"></script>
+    <script>
+        const profileData = new Profile();
+        profileData.render("profile-container");
+    </script>
 
     <div>
         <div class="rect1"></div>
