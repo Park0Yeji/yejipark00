@@ -47,11 +47,12 @@ class ContentSection {
 }
 
 class WorkItem {
-    constructor(id, title, subtitle, imageUrl) {
+    constructor(id, title, subtitle, imageUrl, link = '') {
         this.id = id;
         this.title = title;
         this.subtitle = subtitle;
         this.imageUrl = imageUrl;
+        this.link = link;  // New link property
     }
 
     render() {
@@ -67,9 +68,18 @@ class WorkItem {
         `;
         unitDiv.appendChild(listItem);
 
+        // If a link is provided, create a clickable behavior
+        if (this.link) {
+            unitDiv.classList.add('clickable');
+            unitDiv.addEventListener('click', () => {
+                window.location.href = this.link;  // Navigate to the specific HTML page
+            });
+        }
+
         return unitDiv;
     }
 }
+
 
 class WorksSection {
     constructor(title, workItems) {
@@ -110,11 +120,11 @@ const introSection = new ContentSection('', `
 `);
 
 const worksSection = new WorksSection('Works', [
-    new WorkItem('button-1', 'Research', 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', 'image/ubicomopworkshop.png'),
-    new WorkItem('button-2', 'Graduation Research', 'O-K Text: Hangul Input System in Head Mounted Display Utilizing Gaze and Hand Gestures', 'image/oktext.png'),
-    new WorkItem('button-3', 'Research', 'Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era', 'image/wishes.png'),
-    new WorkItem('button-4', 'Design Project', 'BBB: Revolutionising Cross-Language Communication Services in a Multilingual World', 'image/bbbk_reddot.png'),
-    new WorkItem('button-5', 'Industrial Collaboration - bbb Korea', 'bbb Korea Interpreting Request and Volunteer App Design', 'image/bbbk.png')
+    new WorkItem('button-1', 'Research', 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', 'image/ubicomopworkshop.png', '1.html'),
+    new WorkItem('button-2', 'Graduation Research', 'O-K Text: Hangul Input System in Head Mounted Display Utilizing Gaze and Hand Gestures', 'image/oktext.png', '2.html'),
+    new WorkItem('button-3', 'Research', 'Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era', 'image/wishes.png', '3.html'),
+    new WorkItem('button-4', 'Design Project', 'BBB: Revolutionising Cross-Language Communication Services in a Multilingual World', 'image/bbbk_reddot.png', '4.html'),
+    new WorkItem('button-5', 'Industrial Collaboration - bbb Korea', 'bbb Korea Interpreting Request and Volunteer App Design', 'image/bbbk.png', '5.html')
 ]);
 
 const publicationsSection = new ContentSection('Publications', [
