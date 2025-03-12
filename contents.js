@@ -1,8 +1,9 @@
 class ContentSection {
-    constructor(title, content, isList = false) {
+    constructor(title, content, isList = false, isNews = false) {
         this.title = title;
         this.content = content;
         this.isList = isList;
+        this.isNews = isNews
     }
 
     render() {
@@ -16,25 +17,47 @@ class ContentSection {
 
         // Content
         if (this.isList) {
-            this.content.forEach(item => {
-                const listItem = document.createElement('div');
-                listItem.className = 'list';
-
-                const numberDiv = document.createElement('div');
-                numberDiv.className = 'list_number';
-                numberDiv.textContent = `${item.number}.`;
-                listItem.appendChild(numberDiv);
-
-                const listContent = document.createElement('li');
-                listContent.innerHTML = `
-                    <h1>${item.title}</h1>
-                    <h2>${item.subtitle}</h2>
-                    ${item.link ? `<a href="${item.link}">${item.linkText}</a>` : ''}
-                `;
-                listItem.appendChild(listContent);
-
-                section.appendChild(listItem);
-            });
+            if (!this.isNews){
+                this.content.forEach(item => {
+                    const listItem = document.createElement('div');
+                    listItem.className = 'list';
+    
+                    const numberDiv = document.createElement('div');
+                    numberDiv.className = 'list_number';
+                    numberDiv.textContent = `${item.number}`;
+                    listItem.appendChild(numberDiv);
+    
+                    const listContent = document.createElement('li');
+                    listContent.innerHTML = `
+                        <h1>${item.title}</h1>
+                        <h2>${item.subtitle}</h2>
+                        ${item.link ? `<a href="${item.link}">${item.linkText}</a>` : ''}
+                    `;
+                    listItem.appendChild(listContent);
+    
+                    section.appendChild(listItem);
+                });
+            }
+            else {
+                this.content.forEach(item => {
+                    const listItem = document.createElement('div');
+                    listItem.className = 'list';
+    
+                    const numberDiv = document.createElement('div');
+                    numberDiv.className = 'list_number';
+                    numberDiv.textContent = `${item.number}`;
+                    listItem.appendChild(numberDiv);
+    
+                    const listContent = document.createElement('li');
+                    listContent.innerHTML = `
+                        <h3>${item.title}</h3>
+                    `;
+                    listItem.appendChild(listContent);
+    
+                    section.appendChild(listItem);
+                });
+            }
+            
         } else {
             const contentDiv = document.createElement('div');
             contentDiv.className = 'intro';
@@ -114,10 +137,19 @@ class WorksSection {
 const introSection = new ContentSection('', `
     <h1><span class="color">Hello!</span> this is Yeji Park</h1>
     <h2>
-    I am passionate about designing interactive systems, particularly in the field of <span class="highlight">Wearable and Interactive AI</span>. Currently, I am researching <span class="highlight">AI-driven multi-modal interactions for wearable devices</span>.
-    I am double majoring in Electrical Engineering and Design at UNIST. Additionally, I am working as an undergraduate research intern in the <a href="https://sites.google.com/view/uailab" target="_blank">Ubiquitous AI Lab</a> at UNIST under the supervision of Professor <a href="https://taesikgong.com/" target="_blank">Taesik Gong</a>. My research broadly focuses on Human-Centered AI, with an emphasis on integrating wearable technology and AI, from both technical and theoretical perspectives. If you are interested in my experience, please check out my CV and works on this website. Enjoy your time!
+    I am deeply passionate about pioneering next-generation <span class="highlight">Wearable and Interactive AI</span>, where intelligent systems seamlessly adapt to users in real-time. My research broadly focuses on human-centered AI, with an emphasis on integrating wearable technology and AI from both technical and theoretical perspectives.
+    I am a Master-Ph.D. integrated student at <a href="https://unist-kor.unist.ac.kr/" target="_blank">UNIST</a> <a href="https://aigs.unist.ac.kr/web/index.php" target="_blank">AIGS</a>, conducting research in the <a href="https://sites.google.com/view/uailab" target="_blank">Ubiquitous AI Lab</a> under the supervision of professor <a href="https://taesikgong.com/" target="_blank">Taesik Gong</a>.  
+    Before starting my graduate studies, I pursued a dual major in Electrical Engineering and Design during my bachelor's degree at UNIST.   
+    If you are interested in my experience, please check out my CV and works on this website. Enjoy your time!
     </h2>
 `);
+
+const newsSection = new ContentSection('News',
+[
+    {number: '🌱', title: 'My first! first authored paper GazeHandSync was accepted ETRA\'25 Short Papers! <span class="date">(2025.03)</span>'},
+    {number: '✨', title: 'I started Master-Ph.D. integrated program at UNIST, Ulsan with Prof. Taesik Gong <span class="date">(2025.03)</span>'},
+]    
+, true, true);
 
 const worksSection = new WorksSection('Works', [
     new WorkItem('button-1', 'Research', 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', 'image/ubicomopworkshop.png', '1.html'),
@@ -128,12 +160,13 @@ const worksSection = new WorksSection('Works', [
 ]);
 
 const publicationsSection = new ContentSection('Publications', [
-    { number: 1, title: 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', subtitle: '<span class="worksHL">Yeji Park</span>, Jiwan Kim, and Ian Oakley. Accepted (In press) Ubicomp/ISWC 2024 Workshop on Heads-Up Computing - Research Summary Paper', link: 'https://dl.acm.org/doi/10.1145/3675094.3678990', linkText: '[acm dl]' },
-    { number: 2, title: 'Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era', subtitle: '<span class="worksHL">Yeji Park</span>, and Kyungho Lee. <span class="kor">2022 한국디자인학회 가을 국제학술대회 논문집 - 대학생학술대회 구두발표 : 전시 경험</span>', link: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11186842', linkText: '[Paper]' }
+    { number: '2.', title: 'GazeHandSync: Mitigating Late-Trigger Errors for Seamless Gaze-Hand Interactions', subtitle: '<span class="worksHL">Yeji Park</span>, Jiwan Kim, and Ian Oakley. Accepted to ETRA 2025 Short Papers: ACM Symposium on Eye Tracking Research and Applications <span class="ac">(Acceptance Rate: 33.3%)</span>', link: '', linkText: '[TBA]'},
+    { number: '1.', title: 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', subtitle: '<span class="worksHL">Yeji Park</span>, Jiwan Kim, and Ian Oakley. UbiComp\'24: Companion of the 2024 on ACM International Joint Conference on Pervasive and Ubiquitous Computing', link: 'https://dl.acm.org/doi/10.1145/3675094.3678990', linkText: '[acm dl]' },
+    // { number: 1, title: 'Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era', subtitle: '<span class="worksHL">Yeji Park</span>, and Kyungho Lee. <span class="kor">2022 한국디자인학회 가을 국제학술대회 논문집 - 대학생학술대회 구두발표 : 전시 경험</span>', link: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11186842', linkText: '[Paper]' }
 ], true);
 
 const awardsSection = new ContentSection('Awards', [
-    { number: 1, title: 'BBB: Revolutionising Cross-Language Communication Services in a Multilingual World', subtitle: 'Sangyun Lee, Seoyeong Hwang, Juhyeok Yoon, <span class="worksHL">Yeji Park</span>, and Kyungho Lee. reddot winner 2023, Brand & Communication Design' }
+    { number: '1.', title: 'BBB: Revolutionising Cross-Language Communication Services in a Multilingual World', subtitle: 'Sangyun Lee, Seoyeong Hwang, Juhyeok Yoon, <span class="worksHL">Yeji Park</span>, and Kyungho Lee. reddot winner 2023, Brand & Communication Design', link:'https://www.red-dot.org/project/bbb-revolutionising-cross-language-communication-services-in-a-multilingual-world-66656', linkText: '[Reddot Awards]' }
 ], true);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -152,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         default: // 홈 또는 기본 페이지
             main.appendChild(introSection.render());
+            main.appendChild(newsSection.render());
             main.appendChild(worksSection.render());
             main.appendChild(publicationsSection.render());
             main.appendChild(awardsSection.render());

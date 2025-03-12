@@ -1,7 +1,7 @@
 class Profile {
     constructor() {
         this.name = "Yeji Park";
-        this.email = "pyj201113@unist.ac.kr";
+        this.email = "yejipark@unist.ac.kr";
         this.linkedin = "https://www.linkedin.com/in/yeji00park";
         this.cv = "https://docs.google.com/document/d/1l8ACnqmVeRhkKDL8u9deGYdHPwSbz_Ah/edit?usp=sharing&ouid=111472790219546371691&rtpof=true&sd=true";
         this.tags = ["#Human_Computer_Interaction", "#Human_AI_Interaction", "#Ubiquitous_Computing", "#Wearable_Interactive_Computing"];
