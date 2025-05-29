@@ -152,6 +152,7 @@ const newsSection = new ContentSection('News',
 , true, true);
 
 const worksSection = new WorksSection('Works', [
+    new WorkItem('button-6', 'Research', 'GazeHandSync: Mitigating Late-Trigger Errors for Seamless Gaze-Hand Interactions', 'image/gazehandsync.png', '6.html'),
     new WorkItem('button-1', 'Research', 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', 'image/ubicomopworkshop.png', '1.html'),
     new WorkItem('button-2', 'Graduation Research', 'O-K Text: Hangul Input System in Head Mounted Display Utilizing Gaze and Hand Gestures', 'image/oktext.png', '2.html'),
     new WorkItem('button-3', 'Research', 'Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era', 'image/wishes.png', '3.html'),
@@ -160,7 +161,7 @@ const worksSection = new WorksSection('Works', [
 ]);
 
 const publicationsSection = new ContentSection('Publications', [
-    { number: '2.', title: 'GazeHandSync: Mitigating Late-Trigger Errors for Seamless Gaze-Hand Interactions', subtitle: '<span class="worksHL">Yeji Park</span>, Jiwan Kim, and Ian Oakley. Accepted to ETRA 2025 Short Papers: ACM Symposium on Eye Tracking Research and Applications <span class="ac">(Acceptance Rate: 33.3%)</span>', link: '', linkText: '[TBA]'},
+    { number: '2.', title: 'GazeHandSync: Mitigating Late-Trigger Errors for Seamless Gaze-Hand Interactions', subtitle: '<span class="worksHL">Yeji Park</span>, Jiwan Kim, and Ian Oakley. Accepted to ETRA 2025 Short Papers: ACM Symposium on Eye Tracking Research and Applications <span class="ac">(Acceptance Rate: 33.3%)</span>', link: 'https://doi.org/10.1145/3715669.3723126', linkText: '[acm dl]'},
     { number: '1.', title: 'The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances', subtitle: '<span class="worksHL">Yeji Park</span>, Jiwan Kim, and Ian Oakley. UbiComp\'24: Companion of the 2024 on ACM International Joint Conference on Pervasive and Ubiquitous Computing', link: 'https://dl.acm.org/doi/10.1145/3675094.3678990', linkText: '[acm dl]' },
     // { number: 1, title: 'Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era', subtitle: '<span class="worksHL">Yeji Park</span>, and Kyungho Lee. <span class="kor">2022 한국디자인학회 가을 국제학술대회 논문집 - 대학생학술대회 구두발표 : 전시 경험</span>', link: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11186842', linkText: '[Paper]' }
 ], true);
