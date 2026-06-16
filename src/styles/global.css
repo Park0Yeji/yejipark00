@@ -12,7 +12,7 @@
   --mono: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-kr: "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 
-  --maxw: 1080px;
+  --maxw: 1200px;
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
