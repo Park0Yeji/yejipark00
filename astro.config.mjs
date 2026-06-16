@@ -7,6 +7,7 @@ export default defineConfig({
   site: 'https://yeji-park.com',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
+  devToolbar: { enabled: false },
   build: {
     format: 'directory',
   },
