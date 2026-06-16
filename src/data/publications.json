@@ -1,0 +1,57 @@
+[
+  {
+    "group": "Preprints & Under Review",
+    "items": [
+      {
+        "code": "Pr.1",
+        "title": "Effects of Stress on 3D Interface Interaction Techniques",
+        "authors": "Mingyu Han, Yonghwan Shin, Yeji Park, Gangtae Park, and Ian Oakley.",
+        "venue": "Under review"
+      }
+    ]
+  },
+  {
+    "group": "Conferences & Journals",
+    "items": [
+      {
+        "code": "C.2",
+        "title": "ExPerT: Personalizing LLM Responses to Users' Domain Expertise via Query-Wise Semantic and Keystroke Behavioral Cues",
+        "authors": "Yeji Park, Jiwon Tark, and Taesik Gong.",
+        "venue": "ACL 2026 (Main, Long)",
+        "award": "Oral Presentation · Top 4%"
+      },
+      {
+        "code": "C.1",
+        "title": "GazeHandSync: Mitigating Late-Trigger Errors for Seamless Gaze-Hand Interactions",
+        "authors": "Yeji Park, Jiwan Kim, and Ian Oakley.",
+        "venue": "ETRA 2025 (Short)",
+        "note": "Acceptance Rate 33.3%",
+        "link": "https://doi.org/10.1145/3715669.3723126"
+      }
+    ]
+  },
+  {
+    "group": "Workshops, Posters & Demos",
+    "items": [
+      {
+        "code": "W.1",
+        "title": "The Impact of Gaze and Hand Gesture Complexity on Gaze-Pinch Interaction Performances",
+        "authors": "Yeji Park, Jiwan Kim, and Ian Oakley.",
+        "venue": "UbiComp / ISWC 2024 Workshop",
+        "link": "https://dl.acm.org/doi/10.1145/3675094.3678990"
+      }
+    ]
+  },
+  {
+    "group": "Domestic Conferences & Journals",
+    "items": [
+      {
+        "code": "D.1",
+        "title": "Wishes: An Emerging Media Art For Improving Reliance in a Post-Pandemic Era",
+        "authors": "Yeji Park, and Kyungho Lee.",
+        "venue": "DSUS 2022",
+        "link": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11186842"
+      }
+    ]
+  }
+]

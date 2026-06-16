@@ -1,0 +1,340 @@
+---
+// Interactive hero "pet": the orange mark follows your cursor and the whole
+// screen's tone shifts with mouse position. Click to morph the mark through
+// the devices Yeji's research lives on — desktop, laptop, phone, watch,
+// glasses, AI. Angular only — no rounded corners.
+---
+
+<div class="hero-int" id="hero-int">
+  <button
+    class="hi-stage"
+    id="hi-stage"
+    type="button"
+    aria-label="Interactive logo — move your mouse to change the tone, click to morph through devices"
+  >
+    <svg class="hi-svg" id="hi-svg" viewBox="0 0 120 120" aria-hidden="true">
+      <!-- 0 · the mark (logo) -->
+      <g class="hi-shape is-on" data-name="ME">
+        <path
+          transform="translate(2.6 14.75) scale(0.85) rotate(72 67.5 53.25)"
+          d="M62.5 61L8 106.5L29.5 58.5L-3.14722e-06 34.5L29.5 27L25 -1.09278e-06L73 15.5L106 3.5L85.5 30.5L135 32.5L81.5 53L106 90.5L62.5 61Z"
+          fill="currentColor"
+        ></path>
+      </g>
+      <!-- 1 · desktop -->
+      <g class="hi-shape" data-name="DESKTOP">
+        <rect x="14" y="18" width="92" height="58" fill="currentColor"></rect>
+        <rect x="54" y="76" width="12" height="12" fill="currentColor"></rect>
+        <rect x="36" y="88" width="48" height="8" fill="currentColor"></rect>
+      </g>
+      <!-- 2 · laptop -->
+      <g class="hi-shape" data-name="LAPTOP">
+        <rect x="24" y="22" width="72" height="46" fill="currentColor"></rect>
+        <path d="M14 72 H106 L114 88 H6 Z" fill="currentColor"></path>
+      </g>
+      <!-- 3 · phone -->
+      <g class="hi-shape" data-name="PHONE">
+        <rect x="42" y="12" width="36" height="96" fill="currentColor"></rect>
+        <rect x="53" y="18" width="14" height="3" fill="var(--bg)"></rect>
+        <rect x="54" y="99" width="12" height="4" fill="var(--bg)"></rect>
+      </g>
+      <!-- 4 · watch -->
+      <g class="hi-shape" data-name="WATCH">
+        <rect x="50" y="10" width="20" height="30" fill="currentColor"></rect>
+        <rect x="50" y="80" width="20" height="30" fill="currentColor"></rect>
+        <rect x="36" y="38" width="48" height="44" fill="currentColor"></rect>
+      </g>
+      <!-- 5 · glasses (AR / wearable) -->
+      <g class="hi-shape" data-name="GLASSES">
+        <rect x="12" y="46" width="40" height="28" fill="currentColor"></rect>
+        <rect x="68" y="46" width="40" height="28" fill="currentColor"></rect>
+        <rect x="52" y="54" width="16" height="8" fill="currentColor"></rect>
+        <rect x="4" y="50" width="8" height="6" fill="currentColor"></rect>
+        <rect x="108" y="50" width="8" height="6" fill="currentColor"></rect>
+      </g>
+      <!-- 6 · AI (chip) -->
+      <g class="hi-shape" data-name="AI">
+        <rect x="38" y="38" width="44" height="44" fill="currentColor"></rect>
+        <rect x="52" y="52" width="16" height="16" fill="var(--bg)"></rect>
+        <!-- pins -->
+        <rect x="44" y="26" width="6" height="12" fill="currentColor"></rect>
+        <rect x="57" y="26" width="6" height="12" fill="currentColor"></rect>
+        <rect x="70" y="26" width="6" height="12" fill="currentColor"></rect>
+        <rect x="44" y="82" width="6" height="12" fill="currentColor"></rect>
+        <rect x="57" y="82" width="6" height="12" fill="currentColor"></rect>
+        <rect x="70" y="82" width="6" height="12" fill="currentColor"></rect>
+        <rect x="26" y="44" width="12" height="6" fill="currentColor"></rect>
+        <rect x="26" y="57" width="12" height="6" fill="currentColor"></rect>
+        <rect x="26" y="70" width="12" height="6" fill="currentColor"></rect>
+        <rect x="82" y="44" width="12" height="6" fill="currentColor"></rect>
+        <rect x="82" y="57" width="12" height="6" fill="currentColor"></rect>
+        <rect x="82" y="70" width="12" height="6" fill="currentColor"></rect>
+      </g>
+      <!-- 7 · agent (bot) -->
+      <g class="hi-shape" data-name="AGENT">
+        <!-- antenna -->
+        <rect x="58" y="12" width="4" height="10" fill="currentColor"></rect>
+        <rect x="52" y="6" width="16" height="8" fill="currentColor"></rect>
+        <!-- head -->
+        <rect x="28" y="28" width="64" height="56" fill="currentColor"></rect>
+        <!-- side ears -->
+        <rect x="20" y="46" width="8" height="20" fill="currentColor"></rect>
+        <rect x="92" y="46" width="8" height="20" fill="currentColor"></rect>
+        <!-- eyes -->
+        <rect x="40" y="44" width="12" height="12" fill="var(--bg)"></rect>
+        <rect x="68" y="44" width="12" height="12" fill="var(--bg)"></rect>
+        <!-- mouth -->
+        <rect x="42" y="68" width="36" height="6" fill="var(--bg)"></rect>
+        <!-- neck -->
+        <rect x="52" y="84" width="16" height="8" fill="currentColor"></rect>
+      </g>
+    </svg>
+  </button>
+
+  <div class="hi-foot">
+    <span class="hi-hint"><span class="hi-dot"></span> INTERACT WITH</span>
+    <span class="hi-name" id="hi-name">ME</span>
+  </div>
+</div>
+
+<div class="hi-tone" id="hi-tone" aria-hidden="true"></div>
+
+<style>
+  .hero-int {
+    --hi-tilt: 0deg;
+    --hi-px: 0;
+    --hi-py: 0;
+    color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    user-select: none;
+  }
+  .hi-stage {
+    position: relative;
+    width: clamp(220px, 30vw, 360px);
+    height: clamp(220px, 30vw, 360px);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    touch-action: manipulation;
+  }
+  /* soft halo behind the mark, in the live accent (square, no radius) */
+  .hi-stage::before {
+    content: "";
+    position: absolute;
+    inset: -34%;
+    background: radial-gradient(
+      circle at center,
+      color-mix(in srgb, var(--accent) 24%, transparent),
+      transparent 70%
+    );
+    filter: blur(10px);
+    opacity: 0.9;
+    transition: transform 0.3s var(--ease);
+    transform: scale(calc(1 + var(--hi-py) * 0.06));
+    z-index: 0;
+  }
+  .hi-svg {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    height: 80%;
+    overflow: visible;
+    transform: translate(calc(var(--hi-px) * 8px), calc(var(--hi-py) * 8px))
+      rotate(var(--hi-tilt));
+    transition: transform 0.45s var(--ease);
+    animation: hi-float 6s var(--ease) infinite;
+  }
+  @keyframes hi-float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -6px;
+    }
+  }
+  .hi-stage:active .hi-svg {
+    transform: translate(calc(var(--hi-px) * 8px), calc(var(--hi-py) * 8px))
+      rotate(var(--hi-tilt)) scale(0.92);
+  }
+
+  /* one shape visible at a time; morph = pop swap */
+  .hi-shape {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0.5) rotate(-30deg);
+    transition: opacity 0.35s var(--ease), transform 0.45s var(--ease);
+    pointer-events: none;
+  }
+  .hi-shape.is-on {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  .hi-shape:not(.is-on) {
+    visibility: hidden;
+  }
+
+  .hi-foot {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font);
+  }
+  .hi-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+  /* square pulse (no rounded dot) */
+  .hi-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    animation: hi-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes hi-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.7);
+      opacity: 0.4;
+    }
+  }
+  /* square label box (no rounded pill) */
+  .hi-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #fff;
+    background: var(--accent);
+    padding: 0.32em 0.62em 0.38em;
+    line-height: 1;
+  }
+
+  /* full-screen tone wash that follows the cursor */
+  .hi-tone {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      520px circle at var(--hi-mx, 50%) var(--hi-my, 35%),
+      color-mix(in srgb, var(--accent) 18%, transparent),
+      transparent 60%
+    );
+    transition: opacity 0.6s var(--ease);
+  }
+  .hi-tone.is-live {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hi-svg {
+      animation: none;
+    }
+    .hi-dot {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const stage = document.getElementById("hi-stage");
+  const svg = document.getElementById("hi-svg");
+  const nameEl = document.getElementById("hi-name");
+  const tone = document.getElementById("hi-tone");
+  const heroInt = document.getElementById("hero-int");
+  const shapes = Array.from(document.querySelectorAll(".hi-shape"));
+
+  if (stage && svg && heroInt && tone && shapes.length) {
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    // tone shift is a mouse-only flourish; touch devices keep the brand orange
+    const finePointer = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    ).matches;
+
+    // --- screen tone follows the cursor -------------------------------------
+    let raf = 0;
+    function onMove(e) {
+      if (!finePointer) return;
+      const nx = e.clientX / window.innerWidth; // 0..1
+      const ny = e.clientY / window.innerHeight;
+
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        // stay tight around the brand orange (≈16) — a subtle warm drift
+        const hue = 11 + nx * 14; // 11..25
+        const light = 50 + (0.5 - ny) * 6; // gentle lighter/darker by Y
+        root.style.setProperty("--accent", `hsl(${hue} 100% ${light}%)`);
+        root.style.setProperty("--accent-ink", `hsl(${hue} 100% ${light}%)`);
+
+        // tone wash position + reveal
+        tone.style.setProperty("--hi-mx", `${nx * 100}%`);
+        tone.style.setProperty("--hi-my", `${ny * 100}%`);
+        tone.classList.add("is-live");
+
+        // the mark leans toward the cursor (pet follow)
+        if (!reduce) {
+          const r = heroInt.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const px = Math.max(-1, Math.min(1, (e.clientX - cx) / 320));
+          const py = Math.max(-1, Math.min(1, (e.clientY - cy) / 320));
+          heroInt.style.setProperty("--hi-px", px.toFixed(3));
+          heroInt.style.setProperty("--hi-py", py.toFixed(3));
+          heroInt.style.setProperty("--hi-tilt", `${px * 14}deg`);
+        }
+      });
+    }
+    window.addEventListener("pointermove", onMove, { passive: true });
+
+    // gently return to brand color when the pointer leaves the window
+    window.addEventListener("pointerleave", () => {
+      root.style.removeProperty("--accent");
+      root.style.removeProperty("--accent-ink");
+      tone.classList.remove("is-live");
+      heroInt.style.setProperty("--hi-px", "0");
+      heroInt.style.setProperty("--hi-py", "0");
+      heroInt.style.setProperty("--hi-tilt", "0deg");
+    });
+
+    // --- click to morph through the devices ---------------------------------
+    let i = 0;
+    stage.addEventListener("click", () => {
+      shapes[i].classList.remove("is-on");
+      i = (i + 1) % shapes.length;
+      const next = shapes[i];
+      next.classList.add("is-on");
+      if (nameEl) nameEl.textContent = next.getAttribute("data-name") || "";
+      if (!reduce) {
+        svg.animate(
+          [
+            { transform: "scale(0.86) rotate(-8deg)" },
+            { transform: "scale(1) rotate(0deg)" },
+          ],
+          { duration: 380, easing: "cubic-bezier(0.22,1,0.36,1)" }
+        );
+      }
+    });
+  }
+</script>

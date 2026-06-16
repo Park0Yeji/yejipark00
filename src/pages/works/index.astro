@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import WorkCard from "../../components/WorkCard.astro";
+
+const works = (await getCollection("works")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const CATEGORIES = ["Academic Project", "Design Project", "Toy Project"];
+const groups = CATEGORIES.map((name) => ({
+  name,
+  items: works.filter((w) => w.data.category === name),
+})).filter((g) => g.items.length > 0);
+---
+
+<Base title="Works — Yeji Park" description="Research and design projects by Yeji Park on wearable, multimodal, gaze-hand interaction.">
+  <div class="wrap">
+    <section class="block">
+      <h1 class="page-title">Works</h1>
+      {
+        groups.map((g) => (
+          <div class="work-group">
+            <h2 class="work-group-title">{g.name}</h2>
+            <div class="card-grid">
+              {g.items.map((w) => (
+                <WorkCard
+                  href={`/works/${w.id}`}
+                  title={w.data.title}
+                  category={w.data.category}
+                  year={w.data.year}
+                  image={w.data.image}
+                  badge={w.data.badge}
+                  axis={w.data.axis}
+                  showCategory={false}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+</Base>
+
+<style>
+  .page-title {
+    margin: 0.7rem 0 2.5rem;
+  }
+  .work-group {
+    margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  .work-group-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+</style>

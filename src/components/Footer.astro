@@ -1,0 +1,40 @@
+---
+import profile from "../data/profile.json";
+const year = "2025";
+---
+
+<footer class="footer">
+  <div class="wrap foot-inner">
+    <nav class="foot-links" aria-label="Footer">
+      <a class="meta-link" href={`mailto:${profile.email}`}>Email</a>
+      <a class="meta-link" href={profile.scholar} target="_blank" rel="noopener">Scholar</a>
+      <a class="meta-link" href={profile.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+      <a class="meta-link" href={profile.github} target="_blank" rel="noopener">GitHub</a>
+      <a class="meta-link" href={profile.cv} target="_blank" rel="noopener">CV</a>
+    </nav>
+    <p class="foot-note">© {year} {profile.name}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    padding-block: 2rem;
+  }
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+  }
+  .foot-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+  .foot-note {
+    color: var(--text-soft);
+    font-size: 0.85rem;
+  }
+</style>

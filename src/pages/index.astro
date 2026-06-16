@@ -1,0 +1,141 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import WorkCard from "../components/WorkCard.astro";
+import RefList from "../components/RefList.astro";
+import NewsList from "../components/NewsList.astro";
+import HeroInteractive from "../components/HeroInteractive.astro";
+import profile from "../data/profile.json";
+import news from "../data/news.json";
+import pubGroups from "../data/publications.json";
+import awards from "../data/awards.json";
+
+const recentNews = news.slice(0, 6);
+
+const works = (await getCollection("works"))
+  .filter((w) => w.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+const publications = pubGroups.flatMap((g) => g.items);
+---
+
+<Base>
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="block hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="statement hero-statement" set:html={profile.heroStatement}></h1>
+          <div class="hero-contact">
+            <a class="meta-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+            <a class="meta-link" href={profile.scholar} target="_blank" rel="noopener">Google Scholar ↗</a>
+            <a class="meta-link" href={profile.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="meta-link" href={profile.github} target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <HeroInteractive />
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="block about">
+      <p class="kicker">About</p>
+      <div class="about-grid">
+        <p class="about-body prose" set:html={profile.bioBody}></p>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="block" id="news">
+      <div class="row-head">
+        <p class="kicker">News</p>
+        {news.length > recentNews.length && <a class="meta-link" href="/news">more ↗</a>}
+      </div>
+      <NewsList items={recentNews} />
+    </section>
+
+    <!-- WORKS -->
+    <section class="block">
+      <div class="row-head">
+        <p class="kicker">Selected Works</p>
+        <a class="meta-link" href="/works">all ↗</a>
+      </div>
+      <div class="card-grid">
+        {
+          works.map((w) => (
+            <WorkCard
+              href={`/works/${w.id}`}
+              title={w.data.title}
+              category={w.data.category}
+              year={w.data.year}
+              image={w.data.image}
+              badge={w.data.badge}
+              axis={w.data.axis}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="block">
+      <p class="kicker">Publications</p>
+      <RefList items={publications} />
+    </section>
+
+    <!-- AWARDS -->
+    <section class="block">
+      <p class="kicker">Awards</p>
+      <RefList items={awards} />
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    padding-top: clamp(2.5rem, 7vw, 5rem);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 4rem);
+  }
+  .hero-statement {
+    max-width: 20ch;
+  }
+  @media (max-width: 760px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 8vw, 3rem);
+    }
+  }
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: clamp(2rem, 5vw, 3rem);
+  }
+  .hero-contact .meta-link {
+    font-size: 0.9rem;
+  }
+  .about-grid {
+    margin-top: 1.5rem;
+  }
+  .about-body {
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+
+  .row-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.25rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+</style>

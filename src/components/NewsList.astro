@@ -1,0 +1,52 @@
+---
+interface NewsItem {
+  date: string;
+  icon: string;
+  text: string;
+}
+interface Props {
+  items: NewsItem[];
+}
+const { items } = Astro.props;
+---
+
+<ul class="news">
+  {
+    items.map((n) => (
+      <li class="news-item">
+        <span class="news-date mono">{n.date}</span>
+        <span class="news-text">{n.text}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .news {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .news-item {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .news-date {
+    font-size: 0.75rem;
+    color: var(--accent);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .news-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  @media (max-width: 540px) {
+    .news-item {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+  }
+</style>

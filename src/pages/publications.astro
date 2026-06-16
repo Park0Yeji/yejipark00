@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import RefList from "../components/RefList.astro";
+import groups from "../data/publications.json";
+---
+
+<Base title="Publications — Yeji Park" description="Peer-reviewed publications by Yeji Park.">
+  <div class="wrap">
+    <section class="block">
+      <h1 class="page-title">Publications</h1>
+      {
+        groups.map((g) => (
+          <div class="pub-group">
+            <h2 class="pub-group-title">{g.group}</h2>
+            <RefList items={g.items} />
+          </div>
+        ))
+      }
+    </section>
+  </div>
+</Base>
+
+<style>
+  .page-title {
+    margin: 0.7rem 0 2rem;
+  }
+  .pub-group {
+    margin-bottom: 2.5rem;
+  }
+  .pub-group-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+</style>

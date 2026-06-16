@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import NewsList from "../components/NewsList.astro";
+import news from "../data/news.json";
+---
+
+<Base title="News — Yeji Park" description="Recent news and milestones from Yeji Park.">
+  <div class="wrap">
+    <section class="block">
+      <h1 class="page-title">News</h1>
+      <div class="news-wrap">
+        <NewsList items={news} />
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .page-title {
+    margin: 0.7rem 0 2.5rem;
+  }
+  .news-wrap {
+    max-width: 720px;
+  }
+</style>

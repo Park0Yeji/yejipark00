@@ -1,0 +1,22 @@
+{
+  "name": "Yeji Park",
+  "role": "Master–Ph.D. Integrated Student",
+  "affiliation": "Ubiquitous AI Lab, AIGS, UNIST",
+  "tagline": "Wearable & Interactive AI",
+  "email": "yejipark@unist.ac.kr",
+  "linkedin": "https://www.linkedin.com/in/yeji00park",
+  "github": "https://github.com/Park0Yeji",
+  "scholar": "https://scholar.google.co.kr/citations?user=yxbf1tIAAAAJ&hl=ko",
+  "cv": "/pdf/YejiPark-CV.pdf",
+  "image": "/image/profile.png",
+  "tags": [
+    "Human–Computer Interaction",
+    "Human–AI Interaction",
+    "Ubiquitous Computing",
+    "Wearable Interactive Computing"
+  ],
+  "bioLead": "I explore next-generation interactions that feel seamless and fluid—where computing moves with you, not against you.",
+  "heroStatement": "Hello, this is <span class=\"hl\">Yeji Park</span>.<br />I research <span class=\"hl\">next-generation</span>, <span class=\"hl\">seamless &amp; fluid</span>, and <span class=\"hl\">user-context-attuned</span> interactions that move with the user, not against the user.",
+  "heroSecondary": "My research designs user-context-attuned interactions across wearable, multimodal platforms, so interfaces adapt in real time to who you are and what you need.",
+  "bioBody": "I am a Master–Ph.D. integrated student at <a href=\"https://aigs.unist.ac.kr/web/index.php\" target=\"_blank\" rel=\"noopener\">UNIST AIGS</a>, conducting research in the <a href=\"https://sites.google.com/view/uailab\" target=\"_blank\" rel=\"noopener\">Ubiquitous AI Lab</a> under the supervision of Professor <a href=\"https://taesikgong.com/\" target=\"_blank\" rel=\"noopener\">Taesik Gong</a>. I dual-majored in Electrical Engineering and Design at UNIST, and I'm always excited to share the projects that grew from that intersection—feel free to explore my CV and selected works here, and don't hesitate to reach out!"
+}

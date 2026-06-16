@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import RefList from "../components/RefList.astro";
+import awards from "../data/awards.json";
+---
+
+<Base title="Awards — Yeji Park" description="Awards and recognition received by Yeji Park.">
+  <div class="wrap">
+    <section class="block">
+      <h1 class="page-title">Awards</h1>
+      <RefList items={awards} />
+    </section>
+  </div>
+</Base>
+
+<style>
+  .page-title {
+    margin: 0.7rem 0 0.5rem;
+  }
+</style>

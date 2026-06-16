@@ -1,0 +1,163 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const works = await getCollection("works");
+  return works.map((work) => ({
+    params: { slug: work.id },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+const { Content } = await render(work);
+const d = work.data;
+---
+
+<Base title={`${d.title} — Yeji Park`} description={d.summary} image={d.image}>
+  <div class="wrap">
+    <article class="block work">
+      <a class="back meta-link" href="/works">← Works</a>
+
+      <header class="work-head">
+        <p class="work-eyebrow">{d.category} · {d.year}</p>
+        <h1 class="work-title statement">{d.title}</h1>
+        {d.authors && <p class="work-authors" set:html={d.authors.replace("Yeji Park", "<b>Yeji Park</b>")} />}
+        {d.venue && <p class="work-venue kr">{d.venue}</p>}
+
+        {
+          d.links.length > 0 && (
+            <p class="work-links">
+              {d.links.map((l) => (
+                <a class="ext-chip" href={l.href} target="_blank" rel="noopener">
+                  {l.label}<span class="ext-arrow" aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </p>
+          )
+        }
+      </header>
+
+      <div class="work-prose prose">
+        <Content />
+      </div>
+
+      {d.tags.length > 0 && (
+        <ul class="work-tags">
+          {d.tags.map((t) => (
+            <li class="htag"><span class="hash">#</span>{t}</li>
+          ))}
+        </ul>
+      )}
+
+      {
+        d.gallery.length > 0 && (
+          <div class="gallery">
+            {d.gallery.map((g) => (
+              <img src={g} alt={d.title} loading="lazy" />
+            ))}
+          </div>
+        )
+      }
+    </article>
+  </div>
+</Base>
+
+<style>
+  /* centered reading column so the article isn't pinned to the left */
+  .work {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  .work-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+  .work-title {
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    margin: 0.6rem 0 1.2rem;
+    max-width: 22ch;
+  }
+  .work-authors {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+  }
+  .work-authors b {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .work-venue {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    margin-top: 0.15rem;
+  }
+  .work-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+  }
+  .ext-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.35em 0.7em;
+    border: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease);
+  }
+  .ext-chip:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .ext-arrow {
+    font-size: 0.9em;
+  }
+  .work-prose {
+    margin-top: 2rem;
+  }
+  .work-prose :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+  .work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    margin-top: 1.5rem;
+  }
+  .htag {
+    font-size: 0.85rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .htag .hash {
+    color: var(--accent);
+  }
+  .gallery {
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    margin-top: 2.5rem;
+    padding-bottom: 0.75rem;
+    scroll-snap-type: x mandatory;
+  }
+  .gallery img {
+    height: clamp(200px, 38vh, 320px);
+    width: auto;
+    border: 1px solid var(--border);
+    scroll-snap-align: start;
+    flex: none;
+  }
+</style>
