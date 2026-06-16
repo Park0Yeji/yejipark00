@@ -118,6 +118,7 @@
     background: none;
     border: 0;
     padding: 0;
+    color: inherit; /* keep the mark orange — buttons reset color on mobile */
     cursor: pointer;
     display: grid;
     place-items: center;
@@ -242,6 +243,20 @@
   }
   .hi-tone.is-live {
     opacity: 1;
+  }
+
+  @media (max-width: 760px) {
+    .hero-int {
+      gap: 0.75rem;
+    }
+    .hi-stage {
+      width: clamp(150px, 46vw, 210px);
+      height: clamp(150px, 46vw, 210px);
+    }
+    .hi-hint,
+    .hi-name {
+      font-size: 0.72rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
