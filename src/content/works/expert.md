@@ -13,7 +13,7 @@ venue: "ACL’26: Proceedings of the 63rd Annual Meeting of the Association for 
 authors: "Yeji Park, Jiwon Tark, and Taesik Gong"
 tags: ["LLM_Personalization", "User_Expertise", "User_Behavior_Analysis"]
 links:
-  - { label: "DOI", href: "" }
+  - { label: "DOI", href: "https://aclanthology.org/2026.acl-long.959/" }
 summary: "ExPerT is a query-level LLM personalization framework that infers users' domain expertise from semantic and keystroke behavioral signals, and subsequently adapts the LLM to generate expertise-aligned responses."
 ---
 
