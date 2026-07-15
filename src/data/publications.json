@@ -18,7 +18,7 @@
         "title": "ExPerT: Personalizing LLM Responses to Users' Domain Expertise via Query-Wise Semantic and Keystroke Behavioral Cues",
         "authors": "Yeji Park, Jiwon Tark, and Taesik Gong.",
         "venue": "ACL 2026 (Main, Long)",
-        "award": "Oral Presentation · Top 4%",
+        "award": ["Oral Presentation · Top 4%", "SAC Highlight Award · Top 2%"],
         "link": "https://aclanthology.org/2026.acl-long.959/"
       },
       {

@@ -8,7 +8,7 @@ interface RefItem {
   authors?: string;
   venue: string;
   note?: string;
-  award?: string;
+  award?: string | string[]; // one or more highlights, each shown as an orange ★ chip
   link?: string;
 }
 interface Props {
@@ -39,7 +39,10 @@ const nameHl = (authors: string) =>
                 <span>
                   {p.venue}
                   {p.note && <span class="ref-note"> · {p.note}</span>}
-                  {p.award && <span class="ref-award">★ {p.award}</span>}
+                  {p.award &&
+                    (Array.isArray(p.award) ? p.award : [p.award]).map((a) => (
+                      <span class="ref-award">★ {a}</span>
+                    ))}
                 </span>
                 {p.link ? (
                   <span class="ref-ext" aria-hidden="true">↗</span>
