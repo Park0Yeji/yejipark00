@@ -30,6 +30,7 @@ const publications = pubGroups.flatMap((g) => g.items);
             <a class="meta-link" href={profile.scholar} target="_blank" rel="noopener">Google Scholar ↗</a>
             <a class="meta-link" href={profile.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>
             <a class="meta-link" href={profile.github} target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="meta-link" href={profile.cv} target="_blank" rel="noopener">CV ↗</a>
           </div>
         </div>
         <HeroInteractive />
@@ -84,6 +85,7 @@ const publications = pubGroups.flatMap((g) => g.items);
     <!-- PUBLICATIONS -->
     <section class="block">
       <p class="kicker">Publications</p>
+      <p class="contribution-note">(* Equal contribution)</p>
       <RefList items={publications} />
     </section>
 
@@ -96,6 +98,12 @@ const publications = pubGroups.flatMap((g) => g.items);
 </Base>
 
 <style>
+  .contribution-note {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-soft);
+    margin: 0.75rem 0 0.5rem;
+  }
   .hero {
     padding-top: clamp(2.5rem, 7vw, 5rem);
   }

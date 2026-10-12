@@ -22,3 +22,5 @@ summary: "Redesigning bbb Korea's interpreting request and volunteer app for acc
 ---
 
 Redesigned with enhanced accessibility and user-friendliness by simplifying the requesting process. bbb Korea is a non-profit that provides volunteerism-based, free-of-charge interpretation service in 20 languages for those who don't speak Korean.
+
+From November 2022 to May 2023, we redesigned and launched the interpreting request and service provision app in collaboration with BBB Korea. I designed the interpreting request UI for iOS, supervised by Prof. Kyungho Lee (Department of Design, UNIST).
