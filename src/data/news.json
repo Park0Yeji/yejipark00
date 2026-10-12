@@ -15,14 +15,49 @@
     "text": "Our paper ExPerT was accepted to ACL 2026 (Main, Long) — Oral Presentation, Top 4%! See you in San Diego!"
   },
   {
+    "date": "Spring 2026",
+    "icon": "📚",
+    "text": "Teaching assistant for Mobile Computing (CSE465) and On-Device AI for Smart Manufacturing (NOV A508) at UNIST."
+  },
+  {
+    "date": "2026",
+    "icon": "📝",
+    "text": "Served as a reviewer for ACM CHI 2026 and ACM CHI 2026 Posters."
+  },
+  {
+    "date": "Nov 2025",
+    "icon": "📄",
+    "text": "Filed a Korean patent application with Taesik Gong: LLM Response Personalization Based on User Expertise Utilizing Query-Level Semantic and Behavioral Cues (November 19; No. 10-2025-0175678)."
+  },
+  {
+    "date": "Sep 2025",
+    "icon": "🔬",
+    "text": "Joined the IITP-funded project Robust Vision-Language-Action Integrated On-Device AI for Innovations of Manufacturing Industry as a participating researcher (AI Star Fellowship; PI: Prof. Jaeyoung Sim)."
+  },
+  {
+    "date": "Fall 2025",
+    "icon": "📚",
+    "text": "Teaching assistant for Computer Networks (CSE351) at UNIST."
+  },
+  {
     "date": "May 2025",
     "icon": "✈️",
-    "text": "We presented GazeHandSync at ETRA 2025!"
+    "text": "We presented GazeHandSync at ETRA 2025! I also served as a student volunteer at ACM ETRA 2025."
   },
   {
     "date": "Mar 2025",
     "icon": "🌱",
-    "text": "Started the Integrated Master–Ph.D. program in AIGS at UNIST, advised by Prof. Taesik Gong."
+    "text": "Joined UNIST AIGS for graduate studies in Artificial Intelligence, advised by Prof. Taesik Gong."
+  },
+  {
+    "date": "Mar 2025",
+    "icon": "🔬",
+    "text": "Joined the NRF-funded project Personalized On-Device Multi-modal Small Language Model for Memory Assistance as a participating researcher (PI: Prof. Taesik Gong). Research outcome: ExPerT."
+  },
+  {
+    "date": "Mar 2025",
+    "icon": "🔬",
+    "text": "Joined the IITP-funded project Developing Multimodal Generative AI Talent for Industrial Convergence as a participating researcher (PI: Prof. Jaeyoung Sim). Outcomes include ExPerT and Conversational Traffic Agent Using LLMs with Traffic Information and User Context."
   },
   {
     "date": "Feb 2025",
@@ -35,6 +70,11 @@
     "text": "Graduated with a B.S. in Electrical Engineering & Design (dual major) from UNIST."
   },
   {
+    "date": "Dec 2024",
+    "icon": "🧑🏻‍💻",
+    "text": "Started an undergraduate research internship on human-centered AI at the Ubiquitous Artificial Intelligence Lab, UNIST, supervised by Prof. Taesik Gong (December 2024 – February 2025)."
+  },
+  {
     "date": "Oct 2024",
     "icon": "🪧",
     "text": "Presented our workshop paper on gaze-pinch interaction at UbiComp / ISWC 2024."
@@ -42,12 +82,22 @@
   {
     "date": "Jan 2024",
     "icon": "🧑🏻‍💻",
-    "text": "Began a research internship at the Wearable Interactive Technology Lab, KAIST."
+    "text": "Began an undergraduate research internship on gaze-based VR interaction at the Wearable Interactive Technology Lab, KAIST, supervised by Prof. Ian Oakley (January – November 2024)."
+  },
+  {
+    "date": "Jan 2024",
+    "icon": "🔬",
+    "text": "Joined the NRF-funded project Multimodal Interaction for Augmented Reality as a participating researcher (PI: Prof. Ian Oakley; January 2024 – February 2025). Research outcome: GazeHandSync."
   },
   {
     "date": "2023",
     "icon": "🏆",
     "text": "Won a Red Dot Award for BBB: Revolutionising Cross-Language Communication Services."
+  },
+  {
+    "date": "Aug 2022",
+    "icon": "🧑🏻‍💻",
+    "text": "Started an undergraduate research internship on human-centered AI applications at the Expressive Computing Lab, UNIST, supervised by Prof. Kyungho Lee (August 2022 – June 2023)."
   },
   {
     "date": "2022",

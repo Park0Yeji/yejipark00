@@ -25,3 +25,5 @@ summary: "Classifying AI and human roles in phone interpreting to deliver a flex
 ---
 
 Classify and leverage AI-human roles in human interpreting services over the phone, address the globalization of interpreting requests, and resolve boundary blurring between providers to create a flexible user experience.
+
+My role was UI/UX design, supervised by Prof. Kyungho Lee (Department of Design, UNIST).

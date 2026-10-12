@@ -28,3 +28,5 @@ summary: "A Hangul text-entry system for HMDs that splits consonants to gaze and
 ---
 
 This project is a study on the design of a Hangul input system using gaze and hand interactions on an HMD. Considering the consecutive occurrence of consonants and vowels in Korean, the interaction methods are separated. Consonants use gaze tracking, vowels use finger touch, offering a simple and effective character input experience.
+
+Developed from March to December 2023 as undergraduate research in the Department of Design at UNIST, supervised by Prof. Ian Oakley (School of Electrical Engineering, KAIST).
